@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav{
+    background-color: rgb(2, 2, 80);
+}
+.color{
+    color: rgb(2, 2, 80);
+}
+.navs{
+    /* font-family: ; */
+}
+
+.bord{
+    border: 2px solid rgb(2, 2, 80);
+}
