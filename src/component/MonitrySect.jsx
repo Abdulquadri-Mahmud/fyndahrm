@@ -1,12 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function MonitrySect() {
   return (
-    <div className="flex gap-6 items-center md:justify-start overflow-y-auto px- my-5 over">
+    <div className="border-b border-gray-200 pb-2 flex gap-6 items-center md:justify-start px- my-5 over">
         <div className="mon_navs relative">
             <Link to={'/monitoring'}>
-                <button className="font-normal text-sm flex gap-3 items-center color">Calls <span className="w-10 h-6 text-white flex justify-center items-center nav rounded-full">0</span></button>
+                <span className="font-normal text-sm flex gap-3 items-center color">
+                    Calls <span className="w-10 h-6 text-white flex justify-center items-center nav rounded-full">0</span>
+                </span>
             </Link>
         </div>
         <div className="mon_navs relative">
