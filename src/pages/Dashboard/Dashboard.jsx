@@ -26,7 +26,7 @@ export default function Dashboard() {
 
           <div className="text-white hover:bg-white duration-200 hover:text-black flex items-center gap-2 rounded-md py-2 px-2">
             <FiDatabase className='text-2xl'/>
-            <Link to={'/'}>Data Monitoring</Link>
+            <Link to={'/monitoring'}>Data Monitoring</Link>
           </div>
 
           <div className="text-white hover:bg-white duration-200 hover:text-black flex items-center gap-2 rounded-md py-2 px-2">
@@ -54,8 +54,8 @@ export default function Dashboard() {
       <div className="flex-1 overflow-scroll h-[100vh]">
 
         <div className="w-full p-2 px-6 bg-slate-200 flex gap-3 justify-end items-center">
-          <select id="" className='font-medium bg-transparent px-1'>
-            <option className='font-medium text-sm' value="">AU</option>
+          <select id="" className='font-medium bg-transparent px-1 outline-none border-0'>
+            <option className='font-medium text-sm' value="AU" style={{backgroundImage: 'url(/autralia.png)'}}>AU</option>
             <option className='font-medium text-sm' value=""></option>
           </select>
           <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function Dashboard() {
 
         <div className="flex justify-between px-6 mt-4">
           
-          <div className="md:w-[48%] w-[100%]">
+          <div className="md:w-[49%] w-[100%]">
             <div className="border border-gray-200 rounded-md">
               <div className="bg-red-500 p-3 rounded-md text-white flex justify-between items-center">
                 <h2 className="font-medium ">Device Information</h2>
@@ -161,7 +161,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="md:w-[48%] w-[100%] border border-gray-200 rounded-md">
+          <div className="md:w-[49%] w-[100%] border border-gray-200 rounded-md">
             <div className="bg-red-500 p-3 rounded-md text-white">
               <h2 className="font-medium ">Last Known Location</h2>
             </div>
