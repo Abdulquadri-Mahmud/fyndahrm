@@ -7,7 +7,6 @@ import { MdChevronRight, MdOutlineDashboard, MdOutlineManageAccounts, MdOutlineS
 import { TiDevicePhone } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 import Header from '../../component/Header'
-import Navs from '../../component/Navs'
 
 export default function Dashboard() {
   return (
