@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --color: rgb(2, 2, 80);
+}
+
 .nav{
     background-color: rgb(2, 2, 80);
 }
@@ -13,13 +17,26 @@
 }
 
 .bord{
-    border: 2px solid rgb(2, 2, 80);
+    border: 2px solid var(--color);
 }
 
-.mon_navs button{
-
+.mon_navs a::after{
+    position: absolute;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    overflow: hidden;
+    background-color: var(--color);
 }
 
 .gradient{
-    background: linear-gradient(to left , rgb(134, 5, 5), rgb(2, 2, 80));
+    background: linear-gradient(to left , rgb(134, 5, 5), var(--color));
 }
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* width: 100%; */
+    /* border: 1px solid #ddd; */
+}
+tr:nth-child(odd){background-color: #f2f2f2}

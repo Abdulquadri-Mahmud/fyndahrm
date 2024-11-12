@@ -1,18 +1,72 @@
-import React from 'react'
-import { BiLogOut } from 'react-icons/bi'
-import { FaAngleRight, FaUserAlt } from 'react-icons/fa'
-import { FiDatabase } from 'react-icons/fi'
-import { IoMdAddCircleOutline } from 'react-icons/io'
+import React, { createContext } from 'react'
 import { IoSearch } from 'react-icons/io5'
-import { MdChevronRight, MdOutlineDashboard, MdOutlineManageAccounts, MdOutlineSettings } from 'react-icons/md'
-import { TiDevicePhone } from 'react-icons/ti'
-import { Link } from 'react-router-dom'
 import MonitrySect from '../../component/MonitrySect'
 import Calls from '../../component/Calls/Calls'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
 
+export const MonitoringContent = createContext();
+
 export default function Monitoring() {
+    const data = [
+        {
+            id: 1,
+            number: '+234903567854',
+            type: '2',
+            date: 'Nov 11 2024, 2:56:56pm',
+            duration: 'Active',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 2,
+            number: '+914903567854',
+            type: '4',
+            date: 'Nov 21 2024, 2:56:56pm',
+            duration: '1 hour 3 minutes 30 seconds',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 3,
+            number: '+14903567854',
+            type: '5',
+            date: 'Feb 21 2024, 2:56:56pm',
+            duration: 'Active',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 4,
+            number: '+24903567854',
+            type: '3',
+            date: 'Nov 21 2024, 2:56:56pm',
+            duration: '1 hour 3 minutes 30 seconds',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 5,
+            number: '+124903567854',
+            type: 'MTN',
+            date: 'Nov 21 2024, 2:56:56pm',
+            duration: 'Active',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 6,
+            number: '+314903567854',
+            type: '1',
+            date: 'Nov 21 2024, 2:56:56pm',
+            duration: '1 hour 3 minutes 30 seconds',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 6,
+            number: '+934903567854',
+            type: '2',
+            date: 'Nov 21 2024, 2:56:56pm',
+            duration: 'Active',
+            deviceID: 'Iphone 7',
+        },
+    ];
+
   return (
     <div className='flex h-[100vh]'>
 
@@ -46,10 +100,13 @@ export default function Monitoring() {
                     </div>
                 </div>
 
-                <MonitrySect/>
+                <MonitrySect />
+
+                <MonitoringContent.Provider value={data}>
+                    <Calls data={data}/>
+                </MonitoringContent.Provider>
 
                 {/*calls */}
-                <Calls/>
                 
             </div>
         </div>

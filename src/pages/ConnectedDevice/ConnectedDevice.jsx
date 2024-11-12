@@ -1,17 +1,87 @@
-import React from 'react'
-import { BiLogOut } from 'react-icons/bi'
-import { FaAngleRight, FaUserAlt } from 'react-icons/fa'
-import { FiDatabase } from 'react-icons/fi'
+import React, { useEffect, useState } from 'react'
 import { IoMdAddCircleOutline } from 'react-icons/io'
 import { IoSearch } from 'react-icons/io5'
-import { MdChevronRight, MdOutlineDashboard, MdOutlineManageAccounts, MdOutlineSettings } from 'react-icons/md'
-import { TiDevicePhone } from 'react-icons/ti'
-import { Link } from 'react-router-dom'
-import MonitrySect from '../../component/MonitrySect'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 export default function ConnectedDevice() {
+
+    const data = [
+        {
+            id: 1,
+            deviceModel: 'infinix2345',
+            network: 'MTN',
+            battery: '90%',
+            wifiConnection: 'Active',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 2,
+            deviceModel: 'infinix2345',
+            network: 'Airtel',
+            battery: '90%',
+            wifiConnection: 'Inactive',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 3,
+            deviceModel: 'infinix2345',
+            network: 'Glo',
+            battery: '90%',
+            wifiConnection: 'Active',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 4,
+            deviceModel: 'infinix2345',
+            network: '9mobile',
+            battery: '90%',
+            wifiConnection: 'Inactive',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 5,
+            deviceModel: 'infinix2345',
+            network: 'MTN',
+            battery: '90%',
+            wifiConnection: 'Active',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 6,
+            deviceModel: 'infinix2345',
+            network: 'MTN',
+            battery: '90%',
+            wifiConnection: 'Inactive',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 6,
+            deviceModel: 'infinix2345',
+            network: 'Airtel',
+            battery: '90%',
+            wifiConnection: 'Active',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+        {
+            id: 7,
+            deviceModel: 'infinix2345',
+            network: 'Glo',
+            battery: '90%',
+            wifiConnection: 'Inactive',
+            location: '34 Angola street, Anywhere',
+            status: 'view'
+        },
+    ];
+
   return (
     <div className='flex h-[100vh]'>
 
@@ -24,7 +94,7 @@ export default function ConnectedDevice() {
             <Navs/>
         </div>
 
-        <div className="flex-1 overflow-scroll h-[100vh]">
+        <div className="flex-1 overflow-y-scroll h-[100vh]">
             <Header/>
 
             <div className="flex justify-between items-center flex-wrap px-6 my-6 ">
@@ -50,37 +120,72 @@ export default function ConnectedDevice() {
                     <p className="text-gray-500">Last Synced: <span className="font-medium text-black"> 3 minutes agao</span></p>
                 </div>
             </div>
+            
+            <div className="overflow-auto px-6 my-8">
+                <table class="w-full">
+                    <thead className=''>
+                        <tr className=''>
+                            <th className='px-7 py-2 rounded-tl-md text-start bg-red-600 text-white font-medium'>S/N</th>
+                            <th className='px-7 py-2 bg-red-600 text-start text-white font-medium'>Device Model</th>
+                            <th className='px-7 py-2 bg-red-600 text-start text-white font-medium'>Network Carrier</th>
+                            <th className='px-7 py-2 bg-red-600 text-start text-white font-medium'>Battery</th>
+                            <th className='px-7 py-2 bg-red-600 text-start text-white font-medium'>Wifi Connection</th>
+                            <th className='px-7 py-2 bg-red-600 text-start text-white font-medium'>Location</th>
+                            <th className='px-7 py-2 rounded-tr-md text-start bg-red-600 text-white font-medium'>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            data.length > 0 && data.map((data) => {
+                                const { id, deviceModel, network,
+                                    battery, wifiConnection, location, status
+                                } = data;
 
-            <table class="table-fixed">
-                <thead>
-                    <tr>
-                        <th>S/N</th>
-                        <th>Device Model</th>
-                        <th>Network Carrier</th>
-                        <th>Battery</th>
-                        <th>Wifi Connection</th>
-                        <th>Location</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                        <td>Malcolm Lockyer</td>
-                        <td>1961</td>
-                    </tr>
-                    <tr>
-                        <td>Witchy Woman</td>
-                        <td>The Eagles</td>
-                        <td>1972</td>
-                    </tr>
-                    <tr>
-                        <td>Shining Star</td>
-                        <td>Earth, Wind, and Fire</td>
-                        <td>1975</td>
-                    </tr>
-                </tbody>
-            </table>
+                                return (
+                                    <tr key={id}>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{id}</td>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{deviceModel}</td>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{network}</td>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{battery}</td>
+                                        <td className='px-7 md:py-4 py-2'>
+                                            <div className={`${wifiConnection === 'Active' ? 'flex items-center justify-center gap-2 bg-green-200 py-1 rounded-full' : 'rounded-full bg-slate-200 py-1 '} text-sm  text-center w-[80px]`}>
+                                                {
+                                                    wifiConnection === 'Active' && (
+                                                        <p className='w-2 h-2 rounded-full bg-green-500'></p>
+                                                    )
+                                                }
+                                                <p> {wifiConnection}</p>
+                                            </div>
+                                        </td>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{location}</td>
+                                        <td className='text-sm px-7 text-start md:py-4 py-2'>{status}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div className="px-6 pb-3 flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                    <FaArrowLeft className='text-gray-600'/>
+                    <p className='text-sm text-gray-600'>Previous</p>
+                </div>
+
+                <div className="flex justify-center items-center gap-2">
+                    <div className="py-1 px-4 rounded-md bg-slate-200">1</div>
+                    <div className="py-1 px-4 rounded-md bg-slate-100 hover:bg-slate-200">2</div>
+                    <div className="py-1 px-4 rounded-md bg-slate-100 hover:bg-slate-200">3</div>
+                    <div className="py-1 px-4 rounded-md bg-slate-100 hover:bg-slate-200">4</div>
+                    <div className="py-1 px-4 rounded-md bg-slate-100 hover:bg-slate-200">5</div>
+                    <div className="py-1 px-4 rounded-md bg-slate-100 hover:bg-slate-200">6</div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <FaArrowRight className='text-gray-600'/>
+                    <p className='text-sm text-gray-600'>Next</p>
+                </div>
+            </div>
         </div>
     </div>
   )
