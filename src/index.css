@@ -15,3 +15,11 @@
 .bord{
     border: 2px solid rgb(2, 2, 80);
 }
+
+.mon_navs button{
+
+}
+
+.gradient{
+    background: linear-gradient(to left , rgb(134, 5, 5), rgb(2, 2, 80));
+}

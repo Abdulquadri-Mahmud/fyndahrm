@@ -8,11 +8,11 @@ import { MdChevronRight, MdOutlineDashboard, MdOutlineManageAccounts, MdOutlineS
 import { TiDevicePhone } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 import MonitrySect from '../../component/MonitrySect'
-import Calls from '../../component/Calls/Calls'
+import LocationCOmpo from '../../component/LocationCOmpo'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
 
-export default function Monitoring() {
+export default function Location() {
   return (
     <div className='flex h-[100vh]'>
 
@@ -27,7 +27,7 @@ export default function Monitoring() {
 
         <div className="flex-1 overflow-scroll h-[100vh]">
             <Header/>
-            
+
             <div className="flex justify-between items-center px-6 my-6 flex-wrap gap-3">
                 <h1 className='font-medium text-2xl'>Data Monitoring</h1>
                 <select id="" className='font-medium bg-transparent outline-none px-5 rounded-md bord py-2'>
@@ -36,7 +36,7 @@ export default function Monitoring() {
                 </select>
             </div>
             <div className="px-6">
-                <div className="mt-3 flex items-center flex-wrap gap-4">
+                <div className="mt-3 flex items-center gap-4">
                     <button className="px-4 nav py-3 rounded-md text-white font-medium">Device management</button>
                     <div className="relative">
                         <input type="text" placeholder='Search' className='px-2 py-2 pl-10 border-2 border-gray-200 rounded-md'/>
@@ -49,7 +49,7 @@ export default function Monitoring() {
                 <MonitrySect/>
 
                 {/*calls */}
-                <Calls/>
+                <LocationCOmpo/>
                 
             </div>
         </div>
