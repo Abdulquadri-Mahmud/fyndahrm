@@ -71,18 +71,18 @@ export default function Settings() {
                     <p className="text-gray-400 pt-2">Update your personal details here.</p>
                 </div>
 
-                <div className="md:max-w-[60%] mx-auto shadow-md rounded-md p-5 mt-8">
+                <div className="md:max-w-[60%] mx-auto shadow-md rounded-md p-5 mt-5">
                     <div className="grid md:grid-cols-2 grid-cols-1  gap-3">
-                        <div className=" my-2 flex flex-col gap-3 font-medium text-[1.2rem] text-gray-600">
+                        <div className=" my-2 flex flex-col gap-3 font-medium text-[1rem] text-gray-600">
                             <span className="">First name</span>
                             <input type="text" placeholder='Example' className='rounded-md border border-gray-300 px-3 py-3'/>
                         </div>
-                        <div className=" my-2 flex flex-col gap-3 font-medium text-[1.2rem] text-gray-600">
+                        <div className=" my-2 flex flex-col gap-3 font-medium text-[1rem] text-gray-600">
                             <span className="">Last name</span>
                             <input type="text" placeholder='Example' className='rounded-md border border-gray-300 px-3 py-3'/>
                         </div>
                     </div>
-                    <div className="relative my-2 flex flex-col gap-3 font-medium text-[1.2rem] text-gray-600">
+                    <div className="relative my-2 flex flex-col gap-3 font-medium text-[1rem] text-gray-600">
                         <span className="">Email</span>
                         <input type="text" placeholder='Example@gmail.com' className='pl-12 rounded-md border border-gray-300 px-3 py-3'/>
                         <div className="absolute top-14 px-4">
