@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { BiLogOut } from 'react-icons/bi'
 import { FaAngleRight, FaUserAlt } from 'react-icons/fa'
 import { FiDatabase } from 'react-icons/fi'
@@ -13,7 +13,62 @@ import BrowsermanagmentCompo from '../../component/BrowsermanagmentCompo'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
 
+export const BrowsermanagmentContext = createContext();
+
 export default function Browsermanagment() {
+    const data = [
+        {
+            id: 1,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            date: 'Nov 11 2024, 2:56:56pm',
+            name: 'http://Namecheap.com',
+            action: 'Block Site'
+        },
+        {
+            id: 2,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'http://whogohost.com ',
+            action: 'Block Site'
+        },
+        {
+            id: 3,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            body: 'Active',
+            date: 'Im good, thank you',
+            name: 'http://Namecheap.com',
+            action: 'Block Site'
+        },
+        {
+            id: 4,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'http://whogohost.com ',
+            action: 'Block Site'
+        },
+        {
+            id: 5,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'http://Namecheap.com',
+            action: 'Block Site'
+        },
+        {
+            id: 6,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            body: 'Lorem ipsium',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'http://whogohost.com ',
+            action: 'Block Site',
+        },
+        {
+            id: 7,
+            date2: 'Nov 21 2024, 2:56:56pm',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'http://Namecheap.com',
+            action: 'Block Site'
+        },
+    ];
   return (
     <div className='flex h-[100vh]'>
 
@@ -50,7 +105,9 @@ export default function Browsermanagment() {
                 <MonitrySect/>
 
                 {/*calls */}
-                <BrowsermanagmentCompo/>
+                <BrowsermanagmentContext.Provider value={data}>
+                    <BrowsermanagmentCompo data={data}/>
+                </BrowsermanagmentContext.Provider>
                 
             </div>
         </div>

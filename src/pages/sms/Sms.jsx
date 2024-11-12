@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import { BiLogOut } from 'react-icons/bi'
 import { FaAngleRight, FaUserAlt } from 'react-icons/fa'
 import { FiDatabase } from 'react-icons/fi'
@@ -12,7 +12,68 @@ import SmsCompo from '../../component/SmsCompo'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
 
+export const smsContext = createContext();
+
 export default function Sms() {
+    const data = [
+        {
+            id: 1,
+            number: '+234903567854',
+            body: 'Empoweing business with custom mobile app solution that drive enagement and effiency',
+            date: 'Nov 11 2024, 2:56:56pm',
+            type: '2',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 2,
+            number: '+914903567854',
+            body: 'Empowering business with custom mobile app soluion that drive angegement and efficiency. Empowering business with custom mobile app soluion that drive angegement and efficiency. ',
+            date: 'Nov 21 2024, 2:56:56pm',
+            type: '4',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 3,
+            number: '+14903567854',
+            body: 'Active',
+            date: 'Im good, thank you',
+            type: '5',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 4,
+            number: '+24903567854',
+            body: 'Thank you so much',
+            date: 'Nov 21 2024, 2:56:56pm',
+            type: '3',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 5,
+            number: '+124903567854',
+            body: 'Empowering business with custom mobile app soluion that drive angegement and efficiency.',
+            date: 'Nov 21 2024, 2:56:56pm',
+            type: 'MTN',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 6,
+            number: '+314903567854',
+            body: 'Lorem ipsium',
+            date: 'Nov 21 2024, 2:56:56pm',
+            type: '1',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 7,
+            number: '+934903567854',
+            body: 'Empowering business with custom mobile app soluion that drive angegement and efficiency.',
+            date: 'Nov 21 2024, 2:56:56pm',
+            type: '2',
+            deviceID: 'Iphone 7',
+        },
+    ];
+
   return (
     <div className='flex h-[100vh]'>
 
@@ -49,7 +110,9 @@ export default function Sms() {
                 <MonitrySect/>
 
                 {/*sms */}
-                <SmsCompo/>
+                <smsContext.Provider value={data}>
+                    <SmsCompo data={data}/>
+                </smsContext.Provider>
             </div>
         </div>
     </div>

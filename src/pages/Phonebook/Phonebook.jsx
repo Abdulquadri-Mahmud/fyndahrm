@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useContext } from 'react'
 import { BiLogOut } from 'react-icons/bi'
 import { FaAngleRight, FaUserAlt } from 'react-icons/fa'
 import { FiDatabase } from 'react-icons/fi'
@@ -12,7 +12,57 @@ import PhonebookCompo from '../../component/PhonebookCompo'
 import Header from '../../component/Header'
 import Navs from '../../component/Navs'
 
+export const phoneContext = createContext();
+
 export default function Phonebook() {
+    const data = [
+        {
+            id: 1,
+            number: '+234903567854',
+            date: 'Nov 11 2024, 2:56:56pm',
+            name: 'Godwin Abayomi',
+        },
+        {
+            id: 2,
+            number: '+914903567854',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'Godwin ',
+        },
+        {
+            id: 3,
+            number: '+14903567854',
+            body: 'Active',
+            date: 'Im good, thank you',
+            name: 'Carlos Chidike ',
+        },
+        {
+            id: 4,
+            number: '+24903567854',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'Adeyemi Mahmud',
+        },
+        {
+            id: 5,
+            number: '+124903567854',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'Godwin TN',
+        },
+        {
+            id: 6,
+            number: '+314903567854',
+            body: 'Lorem ipsium',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'Godwin Samuel',
+            deviceID: 'Iphone 7',
+        },
+        {
+            id: 7,
+            number: '+934903567854',
+            date: 'Nov 21 2024, 2:56:56pm',
+            name: 'Ayomide Emmanuel ',
+        },
+    ];
+    
   return (
     <div className='flex h-[100vh]'>
 
@@ -49,7 +99,9 @@ export default function Phonebook() {
                 <MonitrySect/>
 
                 {/*calls */}
-                <PhonebookCompo/>
+                <phoneContext.Provider value={data}>
+                    <PhonebookCompo data={data}/>
+                </phoneContext.Provider>
                 
             </div>
         </div>

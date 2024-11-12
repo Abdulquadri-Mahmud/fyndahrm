@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root{
-    --color: rgb(2, 2, 80);
+    --color: rgb(11, 11, 121);
 }
 
 .nav{
-    background-color: rgb(2, 2, 80);
+    background-color: var(--color);
 }
 .color{
-    color: rgb(2, 2, 80);
+    color: var(--color);
 }
 .navs{
     /* font-family: ; */
