@@ -89,8 +89,8 @@ export default function Settings() {
                             <MdOutlineMail className='text-2xl'/>
                         </div>
                     </div>
-                    <div className="mt-8 flex justify-end rounded items-end ">
-                        <button className='text-center w-[180px] bord py-3 px-4 font-medium rounded-md text-xl'>Update Profile</button>
+                    <div className="mt-6 flex justify-end rounded items-end ">
+                        <button className='text-center w-[170px] bord py-2 px-3 font-medium rounded-md text-xl'>Update Profile</button>
                     </div>
                 </div>
             </form>

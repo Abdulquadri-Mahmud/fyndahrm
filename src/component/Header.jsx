@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className="w-full p-2 px-6 bg-slate-200 flex gap-3 justify-end items-center">
       <select id="" className='font-medium bg-transparent px-1 outline-none border-0'>
-        <option className='font-medium text-sm' value="AU" style={{backgroundImage: 'url(/autralia.png)'}}>AU</option>
+        <option className='font-medium text-sm' value="AU">AU</option>
         <option className='font-medium text-sm' value=""></option>
       </select>
       <div className="flex items-center gap-3">
